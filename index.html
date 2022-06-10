@@ -47,6 +47,10 @@
     		border: 0;
     		box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 		}
+
+		mark{
+			background-color:pink;
+		}
 	</style>
 </head>
 
@@ -56,7 +60,7 @@
 	</h1>
 
 	<p style = "text-align:center; font-size:large"> Extending Generalization in Reinforcement Learning </p>
-	<p style = "text-align:center; color:purple; font-weight: bold; font-style:italic"> Last updated: June 8th, 2022 </p>
+	<p style = "text-align:center; color:purple; font-weight: bold; font-style:italic"> Last updated: June 10th, 2022 </p>
 	<p class="toc">
 		<a href="#description">Description of the Project</a>
 		<a href="#deadlines">Development and Deadlines</a>
@@ -93,12 +97,6 @@
 		<li>Prepare for the official project (morphology learning with humanoids)</li>
 
 		<p>I'll be using the following links for now:</p>
-		<li> <a href="https://www.youtube.com/watch?v=Mut_u40Sqz4">
-			Basics of Reinforcement Learning Implementation</a></li>
-		<li>
-			<a href="https://www.youtube.com/watch?v=0MNVhXEX9to&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&index=1">
-				Theory behind Reinforcement Learning</a>
-		</li>
 		<li>
 			<a href="https://github.com/rail-berkeley/rlkit">
 				Package for RL algorithms</a>
@@ -129,6 +127,48 @@
 	<section id="updates">
 		<h2>Updates</h2>
 
+		<h3>3. Weeks of May 30th and June 6th: Foundation of RL</h3>
+		<p class="text">I start by taking notes about the basics of reinforcement learning. The lectures that I
+		listened are given by professor Steven Brunton. The lectures give an overview of numerous RL methods that
+		are model-based and model-free. I've decided to focus on the algorithm of Q-learning and DQN, since it
+		will be useful for the main project. Since the mathematics and the logic behind the algorithms are quite
+		complex, I've decided to link other papers or online tutorials that will explain deeply some of the concepts
+		that I find interesting (i.e. Q-Learning). </p>
+
+		<p class="text">In terms of implementation, I start by using the <mark>stable-baseline3</mark> package and OpenAI. I will
+		complete three small projects before diving into the concept of generalization in RL: Atari Game, [Project 2]
+		and [Project 3].</p>
+
+
+		Milestones:
+		<br>
+		<li>
+			June 12th: Theory about Reinforcement Learning and Small RL projects complete
+		</li>
+		<br>
+
+		References:
+		<br>
+		<i>Theory of RL</i>
+		<li>
+			<a href="https://www.youtube.com/watch?v=i7q8bISGwMQ&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&index=2">
+				Lectures of Steven L. Brunton</a>
+		</li>
+		<li>
+			<a href="https://faculty.washington.edu/sbrunton/databookRL.pdf">
+				RL Textbook [Data Driven Science & Engineering]</a>
+		</li>
+		<br>
+
+		<i>Practise of RL</i>
+		<li>
+			<a href="https://www.youtube.com/watch?v=Mut_u40Sqz4">
+				Reinforcement Learning for Beginners (3 small projects) with OpenAI</a>
+		</li>
+
+
+
+
 		<h3>2. Week of May 23rd: Discussion and Preparation</h3>
 		<p class="text">We review the basics and the importance of deep learning and reinforcement
 		learning with the professor (back propagation, overfitting, etc.). We then discuss about the
@@ -147,6 +187,13 @@
 		different tasks to train on different agents, like playing chess, the Atari Game, or
 		training humanoids for control tasks (application of morphology-agnostic learning), but these
 		are all brainstormed ideas for now.</p>
+
+		Milestones:
+		<br>
+		<li>May 16th: Beginning of the Project</li>
+		<li>May 20th: <a href="https://docs.google.com/document/d/1Ciug_FlkTgXTZYKA6cHVKw6rtQq4friL/edit">
+			Title and Abstract</a></li>
+		<br>
 
 		References:
 		<br>
