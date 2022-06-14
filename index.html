@@ -60,7 +60,7 @@
 	</h1>
 
 	<p style = "text-align:center; font-size:large"> Extending Generalization in Reinforcement Learning </p>
-	<p style = "text-align:center; color:purple; font-weight: bold; font-style:italic"> Last updated: June 10th, 2022 </p>
+	<p style = "text-align:center; color:purple; font-weight: bold; font-style:italic"> Last updated: June 14th, 2022 </p>
 	<p class="toc">
 		<a href="#description">Description of the Project</a>
 		<a href="#deadlines">Development and Deadlines</a>
@@ -79,7 +79,24 @@
 
 	<section id="description">
 		<h2>Description of the Project</h2>
-		<p class="text"> TBC </p>
+		<b>ABSTRACT</b>
+		<p class="text">
+			Reinforcement learning is a method that focuses on the interaction of the agent and
+			its environment based on different actions. The challenge here is to optimize a policy
+			containing the best series of actions to take given a state in order to maximize the chance
+			of getting a reward. However, rewards aren’t present in every action. They are quite sparse
+			throughout the experiment, which makes it very difficult to distinguish between positive and
+			negative actions. As such, we need a lot of data and examples to train the agent. Furthermore,
+			reinforcement learning can easily lead to overfitting since the agent is trained in a restricted
+			number of environments. In other words, the agent is mostly “memorizing” different actions in a
+			specific environment, which can significantly decrease the agent’s performance in a new
+			environment. Instead, we want to create agents that learn and generalize to similar tasks.
+			These agents are more useful in the real world since they are not only learning about a
+			specific task, but also have the capacity to reuse their experience for different future goals,
+			which can lead to more flexibility in terms of objectives. In this project,
+			we will improve on new machine learning methods that train agents to perform well on different
+			tasks in an environment where they haven’t gathered prior experience.
+		</p>
 
 
 		<p style="text-align:right"><a href="#top">Top of the page</a></p>
@@ -90,11 +107,10 @@
 		<h2>Development and Deadlines</h2>
 
 		<h3>To-Do List for the next two weeks (June 19th)</h3>
-		<li>Review of Machine learning (and deep learning) from IFT 3395</li>
-		<li>Theory about Reinforcement Learning</li>
-		<li>Experiment with different reinforcement learning projects in order to be familiar with
-		the environment (rlkit package)</li>
-		<li>Prepare for the official project (morphology learning with humanoids)</li>
+		<li>Experiment with DQN algorithm with rlkit package</li>
+		<li>Readings about Generalization in RL</li>
+		<li>Theory about RL: Q-Learning</li>
+		<li>Discussion about GPU-Cuda for Pytorch</li>
 
 		<p>I'll be using the following links for now:</p>
 		<li>
@@ -127,6 +143,9 @@
 	<section id="updates">
 		<h2>Updates</h2>
 
+		<h3>4. Week of June 14th: Rlkit and DQN Learning</h3>
+		<p class="text">TBC. </p>
+
 		<h3>3. Weeks of May 30th and June 6th: Foundation of RL</h3>
 		<p class="text">I start by taking notes about the basics of reinforcement learning. The lectures that I
 		listened are given by professor Steven Brunton. The lectures give an overview of numerous RL methods that
@@ -136,8 +155,8 @@
 		that I find interesting (i.e. Q-Learning). </p>
 
 		<p class="text">In terms of implementation, I start by using the <mark>stable-baseline3</mark> package and OpenAI. I will
-		complete three small projects before diving into the concept of generalization in RL: Atari Game, [Project 2]
-		and [Project 3].</p>
+		complete three small projects before diving into the concept of generalization in RL: Atari Game,
+		Autonomous Driving and Creating a custom environment with Gym libraries.</p>
 
 
 		Milestones:
