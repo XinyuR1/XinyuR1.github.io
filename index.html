@@ -2,228 +2,69 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="HTML, CSS">
-	<meta name="description" content="Project for the IFT 3150 course at the
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="description" content="Project for the IFT 3150 course at the
 	 University of Montreal">
-	<title>IFT 3150 - Project in Computer Science</title>
-	<style>
-
-		h3 {
-			text-decoration: underline;
-		}
-
-		.toc {
-			display:flex;
-			justify-content: space-around;
-		}
-
-		img {
-			width: 150px;
-			float: right;
-			object-fit: cover;
-		}
-
-		em {
-			color: red;
-			font-style: normal;
-		}
-
-		.title {
-			text-align: center;
-			background-color: skyblue;
-			border:1px;
-			border-style:solid;
-		}
-
-		.text {
-			text-align: justify;
-			text-justify: inter-word;
-		}
-
-		hr.style {
-     		height: 12px;
-    		border: 0;
-    		box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-		}
-
-		mark{
-			background-color:pink;
-		}
-	</style>
+    <title>IFT 3150 - Project in Computer Science</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="padding: 30px 10vw; background-color:skyblue;">
-	<h1 class="title">
-		IFT 3150 - Project in Computer Science
-	</h1>
 
-	<p style = "text-align:center; font-size:large"> Extending Generalization in Reinforcement Learning </p>
-	<p style = "text-align:center; color:purple; font-weight: bold; font-style:italic"> Last updated: June 14th, 2022 </p>
-	<p class="toc">
-		<a href="#description">Description of the Project</a>
-		<a href="#deadlines">Development and Deadlines</a>
-		<a href="#updates">Updates</a>
-	</p>
+<!-- TITLE -->
+<h1 class="title">
+    IFT 3150 - Project in Computer Science
+</h1>
+<p style = "text-align:center; font-size:large"> Extending Generalization in Reinforcement Learning </p>
+<p style = "text-align:center; font-weight: bold; font-size:large"> Last updated: June 19th, 2022 </p>
+<img src = "images/udem.png" alt = "Logo of University of Montreal">
 
-	<img src = "images/udem.png" alt = "Logo of University of Montreal">
-
-	<p>
-		<b>Student:</b> Ronnie Liu (20154429)<br>
-		<b>Professor:</b> Glen Berseth <br>
-		<b>Professor:</b> Michalis Famelis
-		<br>
-	</p>
-	<hr class="style">
-
-	<section id="description">
-		<h2>Description of the Project</h2>
-		<b>ABSTRACT</b>
-		<p class="text">
-			Reinforcement learning is a method that focuses on the interaction of the agent and
-			its environment based on different actions. The challenge here is to optimize a policy
-			containing the best series of actions to take given a state in order to maximize the chance
-			of getting a reward. However, rewards aren’t present in every action. They are quite sparse
-			throughout the experiment, which makes it very difficult to distinguish between positive and
-			negative actions. As such, we need a lot of data and examples to train the agent. Furthermore,
-			reinforcement learning can easily lead to overfitting since the agent is trained in a restricted
-			number of environments. In other words, the agent is mostly “memorizing” different actions in a
-			specific environment, which can significantly decrease the agent’s performance in a new
-			environment. Instead, we want to create agents that learn and generalize to similar tasks.
-			These agents are more useful in the real world since they are not only learning about a
-			specific task, but also have the capacity to reuse their experience for different future goals,
-			which can lead to more flexibility in terms of objectives. In this project,
-			we will improve on new machine learning methods that train agents to perform well on different
-			tasks in an environment where they haven’t gathered prior experience.
-		</p>
+<p>
+    <b>Student:</b> Ronnie Liu (20154429)<br>
+    <b>Professor:</b> Glen Berseth <br>
+    <b>Professor:</b> Michalis Famelis
+    <br>
+</p>
+<hr class="style">
 
 
-		<p style="text-align:right"><a href="#top">Top of the page</a></p>
-		<hr class="style">
-	</section>
+<!-- TABLE OF CONTENTS -->
+<h2>Table of Contents</h2>
 
-	<section id="deadlines">
-		<h2>Development and Deadlines</h2>
+<div>
+    <a href="IFT3150/description.html">Description of the Project</a><br>
+    <a href="IFT3150/updates.html">Updates</a><br>
+    <a href="IFT3150/notes.html">Notes and Resources</a><br>
+    <a href="IFT3150/deadlines.html">Development and Deadlines</a><br>
+</div>
+<br>
+<hr class="style">
 
-		<h3>To-Do List for the next two weeks (June 19th)</h3>
-		<li>Experiment with DQN algorithm with rlkit package</li>
-		<li>Readings about Generalization in RL</li>
-		<li>Theory about RL: Q-Learning</li>
-		<li>Discussion about GPU-Cuda for Pytorch</li>
+<!-- ABSTRACT -->
+<h2>Abstract</h2>
+    <!-- English -->
+<p class="text">
+    Reinforcement learning is a method that focuses on the interaction of the agent and
+    its environment based on different actions. The challenge here is to optimize a policy
+    containing the best series of actions to take given a state in order to maximize the chance
+    of getting a reward. However, rewards aren’t present in every action. They are quite sparse
+    throughout the experiment, which makes it very difficult to distinguish between positive and
+    negative actions. As such, we need a lot of data and examples to train the agent. Furthermore,
+    reinforcement learning can easily lead to overfitting since the agent is trained in a restricted
+    number of environments. In other words, the agent is mostly “memorizing” different actions in a
+    specific environment, which can significantly decrease the agent’s performance in a new
+    environment. Instead, we want to create agents that learn and generalize to similar tasks.
+    These agents are more useful in the real world since they are not only learning about a
+    specific task, but also have the capacity to reuse their experience for different future goals,
+    which can lead to more flexibility in terms of objectives. In this project,
+    we will improve on new machine learning methods that train agents to perform well on different
+    tasks in an environment where they haven’t gathered prior experience.
+</p>
 
-		<p>I'll be using the following links for now:</p>
-		<li>
-			<a href="https://github.com/rail-berkeley/rlkit">
-				Package for RL algorithms</a>
-		</li>
-
-		<h3>Deadlines</h3>
-		<li>May 16th: Beginning of the Project</li>
-		<li>May 20th: <a href="https://docs.google.com/document/d/1Ciug_FlkTgXTZYKA6cHVKw6rtQq4friL/edit">
-			Title and Abstract</a></li>
-
-		<li>
-			<b>June 12th</b>: Theory about Reinforcement Learning and Small RL projects complete
-		</li>
-		<li>
-			<b>June 19th</b>: RLKIT package testing (DQN) and other online tutorials about RL complete
-		</li>
-		<li>
-			<b>June 19th</b>: Start Main project (morphology learning) and write comments about
-			the updates
-		</li>
-
-		<li>August ??: End of the Project</li>
-
-		<p style="text-align:right"><a href="#top">Top of the page</a></p>
-		<hr class="style">
-	</section>
-
-	<section id="updates">
-		<h2>Updates</h2>
-
-		<h3>4. Week of June 14th: Rlkit and DQN Learning</h3>
-		<p class="text">TBC. </p>
-
-		<h3>3. Weeks of May 30th and June 6th: Foundation of RL</h3>
-		<p class="text">I start by taking notes about the basics of reinforcement learning. The lectures that I
-		listened are given by professor Steven Brunton. The lectures give an overview of numerous RL methods that
-		are model-based and model-free. I've decided to focus on the algorithm of Q-learning and DQN, since it
-		will be useful for the main project. Since the mathematics and the logic behind the algorithms are quite
-		complex, I've decided to link other papers or online tutorials that will explain deeply some of the concepts
-		that I find interesting (i.e. Q-Learning). </p>
-
-		<p class="text">In terms of implementation, I start by using the <mark>stable-baseline3</mark> package and OpenAI. I will
-		complete three small projects before diving into the concept of generalization in RL: Atari Game,
-		Autonomous Driving and Creating a custom environment with Gym libraries.</p>
-
-
-		Milestones:
-		<br>
-		<li>
-			June 12th: Theory about Reinforcement Learning and Small RL projects complete
-		</li>
-		<br>
-
-		References:
-		<br>
-		<i>Theory of RL</i>
-		<li>
-			<a href="https://www.youtube.com/watch?v=i7q8bISGwMQ&list=PLMrJAkhIeNNQe1JXNvaFvURxGY4gE9k74&index=2">
-				Lectures of Steven L. Brunton</a>
-		</li>
-		<li>
-			<a href="https://faculty.washington.edu/sbrunton/databookRL.pdf">
-				RL Textbook [Data Driven Science & Engineering]</a>
-		</li>
-		<br>
-
-		<i>Practise of RL</i>
-		<li>
-			<a href="https://www.youtube.com/watch?v=Mut_u40Sqz4">
-				Reinforcement Learning for Beginners (3 small projects) with OpenAI</a>
-		</li>
-
-
-
-
-		<h3>2. Week of May 23rd: Discussion and Preparation</h3>
-		<p class="text">We review the basics and the importance of deep learning and reinforcement
-		learning with the professor (back propagation, overfitting, etc.). We then discuss about the
-		upcoming tasks that need to accomplish in order to be familiar with reinforcement learning.
-		I decide to start with simple projects that are related with reinforcement learning.</p>
-
-		<p class="text">Once I have completed some small projects, we then decide to work on the main project, which
-		is morphology traning across different environments (expanding generalization of RL). If we have more
-		time in the future, we can try to train with a fixed training data (off-policy idea). </p>
-
-		<h3>1. Week of May 16th: Title and Abstract</h3>
-		<p class="text"> We start by discussing the topic of the project. We have found one paper
-		that talks about the concept of improving reinforcement learning with morphology-agnostic
-		learning. The tasks that we've decided to train on were not confirmed yet, but we're going
-		to use this paper as inspiration for this project. I've found some ideas that I can use as
-		different tasks to train on different agents, like playing chess, the Atari Game, or
-		training humanoids for control tasks (application of morphology-agnostic learning), but these
-		are all brainstormed ideas for now.</p>
-
-		Milestones:
-		<br>
-		<li>May 16th: Beginning of the Project</li>
-		<li>May 20th: <a href="https://docs.google.com/document/d/1Ciug_FlkTgXTZYKA6cHVKw6rtQq4friL/edit">
-			Title and Abstract</a></li>
-		<br>
-
-		References:
-		<br>
-		<li>
-			<a href="https://www.linkedin.com/pulse/anymorph-learning-transferable-policies-inferring-agent-trabucco/">
-			Morphology-Agnostic Learning</a>
-		</li>
-
-		<p style="text-align:right"><a href="#top">Top of the page</a></p>
-		<hr class="style">
-	</section>
+    <!-- French -->
+    <!-- TODO -->
 
 </body>
 </html>

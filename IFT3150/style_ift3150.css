@@ -1,0 +1,30 @@
+h3 {
+	text-decoration: underline;
+	}
+
+em {
+	color: red;
+    font-style: normal;
+}
+
+.title {
+	text-align: center;
+	background-color: skyblue;
+	border:1px;
+	border-style:solid;
+}
+
+.text {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+hr.style {
+	height: 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+mark{
+	background-color:pink;
+}
