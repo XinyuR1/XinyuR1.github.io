@@ -18,8 +18,45 @@
 </h1>
 
 
+
+<h2>5. Week of June 27th: Atari Environment and RLKIT</h2>
+<p class="text">
+    TBC.
+</p>
+
+Deadline:
+<br>
+<li>
+    July ??: Workload 3 - Atari
+</li>
+<br>
+<hr class="style">
+
 <h2>4. Weeks of June 13th and June 20th: DQN, Readings and OpenAI</h2>
-<p class="text">TBC. </p>
+<p class="text">
+    This section of workload focuses on gathering information that is related to the project, which
+    is expanding the concept of generalization in RL. I've found two papers that mainly talk about DQN
+    algorithm that is applied in multiple situations: the first paper talks about fluid mechanics,
+    whereas the second one talks about the Atari Environment. Furthermore, we have found a paper
+    that mainly talks about generalization in RL with zero-policy transfer. In terms of readings,
+    the goal for the upcoming weeks is to find papers that talks more about multi-task and hierarchical
+    learning.
+</p>
+
+<p class="text">
+    I also start testing the RLKIT package by testing the DQN Algorithm with the cartpole environment.
+    The RLKIT package mainly uses PyTorch to implement different methods, so I've decided
+    to apply the same principles but with another library, which is stable-baseline3.
+</p>
+
+<img src = "../images/updates_cartpole.png" alt = "Graphs for PPO Model in Cartpole Environment">
+<i><br>Taken from Notes and References/First Implementation in RL</i>
+
+<p class="text">
+    - Based on the value loss plot, we can see that the agent starts to learn between 0-25k timesteps and then the function decreases once the reward is stabilized.
+    <br>- Based on the policy gradient loss plot, we can see a sudden drop in 35k timesteps, which means the training is successful during this specific amount of timesteps. We observe that the loss increases significantly once it reaches over 35k timesteps.
+    <br>- Based on the explained variance, at 35k timesteps, the value is 0.9633, which is the highest value of explained variance in the plot. However, it is still not superior to 1, which means our PPO model can be improved with other alternatives.
+</p>
 
 Deadline:
 <br>
