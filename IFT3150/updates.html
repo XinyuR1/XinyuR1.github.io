@@ -17,22 +17,70 @@
     Updates
 </h1>
 
+<!-- ************************************************* -->
+<!-- Workload 4 - Docker -->
+<!-- ************************************************* -->
+<h2>Workload 4 - Docker</h2>
 
-
-<h2>5. Week of June 27th: Atari Environment and RLKIT</h2>
 <p class="text">
-    TBC.
+    Week of July 11th <br>
+    <b>Deadline</b>: July 17th
 </p>
 
-Deadline:
-<br>
-<li>
-    July 8th: Workload 3 - Atari
-</li>
-<br>
+<p class="text">
+    TBC
+</p>
+
 <hr class="style">
 
-<h2>4. Weeks of June 13th and June 20th: DQN, Readings and OpenAI</h2>
+
+<!-- ************************************************* -->
+<!-- Workload 3 - Atari -->
+<!-- ************************************************* -->
+<h2>Workload 3 - Atari</h2>
+
+<p class="text">
+    Week of June 27th and July 4th <br>
+    <b>Deadline</b>: July 8th
+</p>
+
+<p class="text">
+    During the previous workload, I was testing the rlkit code with DQN-Cartpole (Project I), but no changes
+    were made in the actual code. The professor and I have decided to work on another small
+    project (exercise), by modifying some parts of the code: (1) Change the Cartpole environment into
+    an Atari one (Breakout), (2) Preprocess the images from the breakout game, (3) Create a new policy
+    from scratch using Pytorch CNN.
+</p>
+
+<p class="text">
+    In order to prepare for the implementation in Pytorch, I followed a playlist of Pytorch tutorials
+    (until workload 5). This also helps me to revise the basics of deep learning and backpropagation.
+    In this workload, I suggested two different CNN Policies for the training of Breakout Game that are shown
+    in the figure (at the end of this block). The plots for the training aren't done since this workload
+    was mainly focused on building a CNN Policy. For the Atari Breakout mini-project, our next goal is
+    to test the two models with a large number of epochs with CPU and GPU.
+</p>
+
+<p class="text">
+    We also had a brief introduction to Dockerfile this week, a topic that will be covered in the next workload.
+</p>
+
+<img src = "../images/cnn_atari_models.png" alt = "CNN Models for Atari Breakout">
+<i><br>Taken from Notes and References/Project II - DQN Atari</i>
+
+
+<hr class="style">
+
+<!-- ************************************************* -->
+<!-- Workload 2 - DQN -->
+<!-- ************************************************* -->
+<h2>Workload 2 - DQN</h2>
+
+<p class="text">
+    Weeks of June 13th and June 20th <br>
+    <b>Deadline</b>: June 26th
+</p>
+
 <p class="text">
     This section of workload focuses on gathering information that is related to the project, which
     is expanding the concept of generalization in RL. I've found two papers that mainly talk about DQN
@@ -50,7 +98,7 @@ Deadline:
 </p>
 
 <img src = "../images/updates_cartpole.png" alt = "Graphs for PPO Model in Cartpole Environment">
-<i><br>Taken from Notes and References/First Implementation in RL</i>
+<i><br>Taken from Notes and References/Project I - DQN Cartpole</i>
 
 <p class="text">
     - Based on the value loss plot, we can see that the agent starts to learn between 0-25k timesteps and then the function decreases once the reward is stabilized.
@@ -58,16 +106,19 @@ Deadline:
     <br>- Based on the explained variance, at 35k timesteps, the value is 0.9633, which is the highest value of explained variance in the plot. However, it is still not superior to 1, which means our PPO model can be improved with other alternatives.
 </p>
 
-Deadline:
-<br>
-<li>
-    June 26th: Workload 2 - DQN
-</li>
-<br>
-
 <hr class="style">
 
-<h2>3. Weeks of May 30th and June 6th: Basics of RL</h2>
+
+<!-- ************************************************* -->
+<!-- Workload 1 - Basics of RL -->
+<!-- ************************************************* -->
+<h2>Workload 1 - Basics of RL</h2>
+
+<p class="text">
+    Weeks of May 30th and June 6th <br>
+    <b>Deadline</b>: June 12th
+</p>
+
 <p class="text">I start by taking notes about the basics of reinforcement learning. The lectures that I
     listened are given by professor Steven Brunton. The lectures give an overview of numerous RL methods that
     are model-based and model-free. I've decided to focus on the algorithm of Q-learning and DQN, since it
@@ -79,16 +130,18 @@ Deadline:
     complete three small projects before diving into the concept of generalization in RL: Atari Game,
     Autonomous Driving and Creating a custom environment with Gym libraries.</p>
 
-
-Deadline:
-<br>
-<li>
-    June 12th: Workload 1 - Basics of RL
-</li>
-<br>
 <hr class="style">
 
-<h2>2. Week of May 23rd: Discussion and Preparation</h2>
+
+<!-- ************************************************* -->
+<!-- DISCUSSION AND PREPARATION -->
+<!-- ************************************************* -->
+<h2>Discussion and Preparation</h2>
+
+<p class="text">
+    Week of May 23rd <br>
+</p>
+
 <p class="text">We review the basics and the importance of deep learning and reinforcement
     learning with the professor (back propagation, overfitting, etc.). We then discuss about the
     upcoming tasks that need to accomplish in order to be familiar with reinforcement learning.
@@ -99,7 +152,17 @@ Deadline:
     time in the future, we can try to train with a fixed training data (off-policy idea). </p>
 <hr class="style">
 
-<h2>1. Week of May 16th: Title and Abstract</h2>
+
+<!-- ************************************************* -->
+<!-- TITLE AND ABSTRACT -->
+<!-- ************************************************* -->
+<h2>Title and Abstract</h2>
+
+<p class="text">
+    Week of May 16th <br>
+    <b>Deadline</b>: May 20th
+</p>
+
 <p class="text"> We start by discussing the topic of the project. We have found one paper
     that talks about the concept of improving reinforcement learning with morphology-agnostic
     learning. The tasks that we've decided to train on were not confirmed yet, but we're going
@@ -107,12 +170,6 @@ Deadline:
     different tasks to train on different agents, like playing chess, the Atari Game, or
     training humanoids for control tasks (application of morphology-agnostic learning), but these
     are all brainstormed ideas for now.</p>
-
-Deadlines:
-<br>
-<li>May 16th: Beginning of the Project</li>
-<li>May 20th: Title and Abstract</li>
-<br>
 
 <p style="text-align:right"><a href="#top">Top of the page</a></p>
 <hr class="style">
