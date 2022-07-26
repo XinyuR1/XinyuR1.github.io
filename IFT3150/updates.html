@@ -18,6 +18,54 @@
 </h1>
 
 <!-- ************************************************* -->
+<!-- Workload 6 - Doodad II -->
+<!-- ************************************************* -->
+<h2>Workload 6 - Doodad II</h2>
+
+<p class="text">
+    Week of July 25th <br>
+    <b>Deadline</b>: July 31th
+</p>
+
+<p class="text">
+    TBC.
+</p>
+
+<hr class="style">
+
+<!-- ************************************************* -->
+<!-- Workload 5 - Doodad -->
+<!-- ************************************************* -->
+<h2>Workload 5 - Doodad</h2>
+
+<p class="text">
+    Week of July 17th <br>
+    <b>Deadline</b>: July 25th
+</p>
+
+<p class="text">
+    During the past workloads, the rlkit library was modified locally in my computer, but it became
+    quite hard to keep track all the changes. I decided to fork the original repositories for rlkit
+    and doodad in order to track down the changes I've done and the issues that I've encountered. From now on,
+    all the changes that were made in the Github repositories will be shown here too. For the links of the repo,
+    consult <i>Notes and References</i>.
+</p>
+
+<p class="text">
+    <b><u>Note:</u></b> The changes on the Github repositories will be shown at the very end of each workload.
+</p>
+
+<p class="text">
+    I will also use doodad library in order to run experiments on different computers. This week's purpose is to also
+    understand the code from doodad and test Atari experiments locally using doodad. The goal of workloads 5 and 6 is to complete
+    the setup for doodad in order to run experiments from the lab computer.
+</p>
+
+<img src = "../images/w5-github.png" onclick="this.src=full_size.gif"><br>
+
+<hr class="style">
+
+<!-- ************************************************* -->
 <!-- Workload 4 - Docker -->
 <!-- ************************************************* -->
 <h2>Workload 4 - Docker</h2>
@@ -28,11 +76,22 @@
 </p>
 
 <p class="text">
-    0. Pytorch Tutorials (Linear, Logistic Regression) <br>
-    1. Meta Reinforcement Learning <br>
-    2. Dockerfile Tutorial <br>
-    -> View article and video (simple example with Docker and Pycharm) <br>
-    3. Dockerfile Exercise (Hello World, Calculator) <br>
+    This week's purpose was to focus on learning Docker and Dockerfile in order to use them eventually
+    in the main project. Finally, I created an image for the rlkit library that was inspired by SMiRL-Code library's
+    Dockerfile. Besides learning Docker, I also took some notes related to Meta-RL
+    (talk given Chelsea Finn) and learned some more Pytorch basics.<br>
+</p>
+
+<p class="text">
+    <b><u>Update on the topic of the project:</u></b><br>
+    Also, we were initially planning on applying the concept of generalization in different humanoids
+    for control tasks (morphology-agnostic learning). However, due to time restrictions, I decided
+    to fully focus on the concept of generalization using different Atari environments since I
+    already wrote two different CNN policies for different Atari environments.<br>
+    <br>
+    The goal here is to experiment on three different environments using CNN policy. The agent trains
+    on three different games and it needs to learn the fourth game by itself (a new game that the agent
+    has never seen before) based on its experience.
 </p>
 
 <hr class="style">
@@ -62,7 +121,10 @@
     In this workload, I suggested two different CNN Policies for the training of Breakout Game that are shown
     in the figure (at the end of this block). The plots for the training aren't done since this workload
     was mainly focused on building a CNN Policy. For the Atari Breakout mini-project, our next goal is
-    to test the two models with a large number of epochs with CPU and GPU.
+    to test the two models with a large number of epochs with CPU and GPU. I tested in my CPU for a very small
+    amount of epochs, so the performance was obviously not great. In order to evaluate our CNN policy,
+    we'll have to wait until we finish setup the doodad library and the docker image in order to run
+    experiments from the lab computer.
 </p>
 
 <p class="text">
