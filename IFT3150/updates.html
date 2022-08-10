@@ -18,7 +18,7 @@
 </h1>
 
 <!-- ************************************************* -->
-<!-- Workload 6 - Doodad II -->
+<!-- Workload 6 - Setup for Experiments -->
 <!-- ************************************************* -->
 <h2>Workload 6 - Setup for Experiments</h2>
 
@@ -27,12 +27,122 @@
     <b>Deadline</b>: August 7th
 </p>
 
+<mark>Tutorials about Generalization in RL</mark>
 <p class="text">
-    - Create a virtual machine Linux (with anaconda)<br>
-    - Connect to remote computer (ssh blue)<br>
-    - Connect to GPU's remote computer for experiments<br>
+    In order to be more familiar with the concept of generalization in RL, I took some notes from Glen's
+    Generalization in Robotics' lesson for his RL course. Since we want to extend the definition of generalization
+    in RL, the professor and I have discussed if we should use Meta Reinforcement Learning in order to
+    let the agent perform better during new tasks. However, due to the complexity of this concept, we
+    decided to focus on zero-shot meta learning by applying one of two methods: avoiding interference or
+    batch RL. This type of Meta Learning is much more simple since I have already wrote a code for running
+    an experiment where the agent only trains in one Atari environment.
 </p>
 
+<mark>Write Rough Draft for Presentation and Report</mark>
+<p class="text">
+    I also wrote a rough draft of the outline of my report in order to get some feedbacks as early as possible.
+    One of the comments given by the professor was to define more about the definition of the success in my project.
+    Initially, I only thought about comparing different average rewards for each Atari environment, but this doesn't
+    give much insight about the effectiveness of using zero-shot meta learning in this project.
+</p>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Average Total Rewards for Various RL Algorithms</i></center>
+    <center><i>Taken from the paper 'Playing Atari with Deep Reinforcement Learning'</i></center>
+    <img src = "../images/w6-baseline.png" alt = "Baseline for Project"><br>
+</div>
+
+<b>How do we measure success in this project?</b>
+<p class="text">
+    I have decided to test several experiments: <br>
+    1. Run Space Invaders after training only one Atari environment (standard RL) <br>
+    2. Run Space Invaders after training multiple Atari environments (zero-shot meta learning) <br>
+</p>
+
+<p class="text">
+    In terms of training on other Atari environments, I took ones that are similar to Space Invaders (shooting games)
+    in order to make sure that the training can make the agent perform better while learning a new game which
+    is Space Invaders.
+</p>
+
+<p class="text">
+    I would measure success by comparing the average total reward with S.Invaders DQN (581) which is the result
+    that is gotten from the 'Playing Atari with Deep Reinforcement Learning' paper, with the experiments that I just mentionned.
+    This comparison helps us to draw conclusions, like which method is better for having a maximized average
+    total rewards: the baseline, the standard RL or the zero-shot meta learning.
+</p>
+
+<mark>Create Virtual Machine in Ubuntu</mark>
+<p class="text">
+    The first week's goal was to be able to run experiments with doodad and a docker image locally.
+    I modified some codes in doodad because most of the codes are written for Linux (instead of Windows).
+    However, when it comes to running the experiment through ssh in doodad, it became really difficult
+    to debug and change the code for Windows configurations. So I decided to launch a virtual machine in
+    Ubuntu 22.04.
+</p>
+
+<p class="text">
+    During the second week, I decided to recreate another fork version of doodad since I will work on
+    my virtual machine (Linux). The workload 5 was practically not really useful for my setup now since
+    everything works without changing anything in the doodad library. However, it did help me to understand
+    a bit more about doodad which makes the next steps much easier to execute.
+</p>
+
+<mark>Test Atari experiments with doodad and docker through local computer and ssh</mark>
+<p class="text">
+    So I started from the beginning by installing Anaconda, Git and Docker on my virtual machine
+    and on my remote computer that is connected through ssh. I also decided to debug on VSCode instead of Pycharm
+    in order to use the ssh extension (so I can connect to the lab computer and modify the files over there easily).
+    Once that's done, I tested the experiments with doodad and docker and it worked. However, there was one
+    issue that needs to solved: the GPU can't seem to detect the running experiment.
+</p>
+
+<mark>Use the lab's GPU to run experiments</mark><br>
+<b>Issue #1: Compatibility sm_86</b>
+<p class="text">
+    The first issue was the compatibility with the Pytorch installation inside the docker image.
+    In order to fix that, I modified the Dockerfile by changing the cuda version to 11.3.0 instead of 10.2.
+    I also changed the torch and torchvision to respectfully torch==1.10.0+cu113 and torchvision==0.11.1+cu113
+    since the compatibility with the lab's GPU is sm_86.
+</p>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>First GPU issue solved in the lab computer</i></center>
+    <center>BEFORE</center>
+    <img src = "../images/w6-gpu-issue1-before.png" alt = "Before of the first GPU issue">
+    <center>AFTER</center>
+    <img src = "../images/w6-gpu-issue1-after.png" alt = "After of the first GPU issue"><br>
+</div>
+
+<b>Issue #2: No GPU processes has been found</b>
+<p class="text">
+    I used to run ssh since I ran the python file (experiment) locally. However, I decided to not use doodad
+    for now and put all the rlkit and doodad code in the lab computer. I then created a nvidia-docker image
+    with cuda version 11.3 and ubuntu version 18.04 so I can run my experiment with this image inside a container.
+    This method works, but the moment I use doodad, it seems like nothing is appearing in the GPU processes which
+    was the issue that I stated before.
+</p>
+
+<b>Current solution: Run the experiment directly in the lab's computer instead of using doodad</b>
+<p class="text">
+    In short, on my lap computer, I used the command <i>docker run -it --gpus all rlkit:latest</i> and inside the image
+    runs the experiment with <i>here_no_doodad</i> mode (mode where we don't use doodad for running the experiments).
+    This is not the most optimal solution, but for now the experiments will be run this way.
+</p>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Second GPU issue solved in the lab computer</i></center>
+    <center>BEFORE</center>
+    <img src = "../images/w6-gpu1.png" alt = "Before of the second GPU issue">
+    <center>AFTER</center>
+    <img src = "../images/w6-gpu2.png" alt = "After of the second GPU issue">
+</div>
 <hr class="style">
 
 <!-- ************************************************* -->
@@ -45,6 +155,7 @@
     <b>Deadline</b>: July 25th
 </p>
 
+<mark>Update repositories</mark>
 <p class="text">
     During the past workloads, the rlkit library was modified locally in my computer, but it became
     quite hard to keep track all the changes. I decided to fork the original repositories for rlkit
@@ -54,16 +165,24 @@
 </p>
 
 <p class="text">
-    <b><u>Note:</u></b> The changes on the Github repositories will be shown at the very end of each workload.
+    <b><u>Note:</u></b> The changes on the Github repositories will be shown at the README section of each
+    Github library (XinyuR1's fork version).
 </p>
 
+<mark>Test Atari experiments with doodad locally</mark><br>
+<mark>Create Lab account and docker image for rlkit</mark>
 <p class="text">
     I will also use doodad library in order to run experiments on different computers. This week's purpose is to also
     understand the code from doodad and test Atari experiments locally using doodad. The goal of workloads 5 and 6 is to complete
-    the setup for doodad in order to run experiments from the lab computer.
+    the setup for doodad in order to run experiments from the lab computer with a docker image for rlkit.
 </p>
 
-<img src = "../images/w5-github.png" onclick="this.src=full_size.gif"><br>
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>List of initial changes in RLKIT and DOODAD</i></center>
+    <img src = "../images/w5-github.png" alt = "List of initial changes in RLKIT and DOODAD"><br>
+</div>
 
 <hr class="style">
 
@@ -77,6 +196,10 @@
     <b>Deadline</b>: July 17th
 </p>
 
+<mark>Pytorch Tutorials (part 2)</mark><br>
+<mark>Video Meta RL</mark><br>
+<mark>Project II: DQN Atari (testing with CPU)</mark><br>
+<mark>Learning Docker</mark>
 <p class="text">
     This week's purpose was to focus on learning Docker and Dockerfile in order to use them eventually
     in the main project. Finally, I created an image for the rlkit library that was inspired by SMiRL-Code library's
@@ -109,6 +232,8 @@
     <b>Deadline</b>: July 8th
 </p>
 
+<mark>Pytorch Tutorials (part 1)</mark><br>
+<mark>Project II: DQN Atari</mark>
 <p class="text">
     During the previous workload, I was testing the rlkit code with DQN-Cartpole (Project I), but no changes
     were made in the actual code. The professor and I have decided to work on another small
@@ -116,7 +241,6 @@
     an Atari one (Breakout), (2) Preprocess the images from the breakout game, (3) Create a new policy
     from scratch using Pytorch CNN.
 </p>
-
 <p class="text">
     In order to prepare for the implementation in Pytorch, I followed a playlist of Pytorch tutorials
     (until workload 5). This also helps me to revise the basics of deep learning and backpropagation.
@@ -129,13 +253,17 @@
     experiments from the lab computer.
 </p>
 
+<mark>Introduction to Dockerfile and GPU</mark>
 <p class="text">
     We also had a brief introduction to Dockerfile this week, a topic that will be covered in the next workload.
 </p>
 
-<img src = "../images/cnn_atari_models.png" alt = "CNN Models for Atari Breakout">
-<i><br>Taken from Notes and References/Project II - DQN Atari</i>
-
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>CNN Models for Atari Breakout</i></center>
+    <img src = "../images/cnn_atari_models.png" alt = "CNN Models for Atari Breakout"><br>
+</div>
 
 <hr class="style">
 
@@ -149,6 +277,7 @@
     <b>Deadline</b>: June 26th
 </p>
 
+<mark>Find readings about Generalization and DQN Algorithm</mark>
 <p class="text">
     This section of workload focuses on gathering information that is related to the project, which
     is expanding the concept of generalization in RL. I've found two papers that mainly talk about DQN
@@ -159,14 +288,19 @@
     learning.
 </p>
 
+<mark>Project I: DQN Cartpole</mark>
 <p class="text">
     I also start testing the RLKIT package by testing the DQN Algorithm with the cartpole environment.
     The RLKIT package mainly uses PyTorch to implement different methods, so I've decided
     to apply the same principles but with another library, which is stable-baseline3.
 </p>
 
-<img src = "../images/updates_cartpole.png" alt = "Graphs for PPO Model in Cartpole Environment">
-<i><br>Taken from Notes and References/Project I - DQN Cartpole</i>
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Graphs for PPO Model in Cartpole Environment</i></center>
+    <img src = "../images/updates_cartpole.png" alt = "Graphs for PPO Model in Cartpole Environment"><br>
+</div>
 
 <p class="text">
     - Based on the value loss plot, we can see that the agent starts to learn between 0-25k timesteps and then the function decreases once the reward is stabilized.
@@ -187,6 +321,7 @@
     <b>Deadline</b>: June 12th
 </p>
 
+<mark>Steve's RL Courses</mark>
 <p class="text">I start by taking notes about the basics of reinforcement learning. The lectures that I
     listened are given by professor Steven Brunton. The lectures give an overview of numerous RL methods that
     are model-based and model-free. I've decided to focus on the algorithm of Q-learning and DQN, since it
@@ -194,7 +329,8 @@
     complex, I've decided to link other papers or online tutorials that will explain deeply some of the concepts
     that I find interesting (i.e. Q-Learning). </p>
 
-<p class="text">In terms of implementation, I start by using the <mark>stable-baseline3</mark> package and OpenAI. I will
+<mark>Complete 3 small projects with OpenAI</mark>
+<p class="text">In terms of implementation, I start by using the stable-baselines3 package and OpenAI. I will
     complete three small projects before diving into the concept of generalization in RL: Atari Game,
     Autonomous Driving and Creating a custom environment with Gym libraries.</p>
 

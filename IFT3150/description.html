@@ -17,24 +17,61 @@
     Description of the Project
 </h1>
 
-<!-- TITLE -->
-<p> <b>Title: </b> Extending Generalization in Reinforcement Learning</p>
+<h2>Title of the Project</h2>
+<p>Extending Generalization in Reinforcement Learning</p>
+<hr class="style">
 
+<h2>Topic of the Project</h2>
 <p class="text">
-    <b>Topic of the project:</b><br>
     I decided to fully focus on the concept of generalization using different Atari environments since I
     already wrote two different CNN policies for different Atari environments.<br>
     <br>
-    The goal here is to experiment on three different environments using CNN policy. The agent trains
-    on three different games and it needs to learn the fourth game by itself (a new game that the agent
-    has never seen before) based on its experience.
+    Generalization usually means to be able to perform well on similar unseen tasks. We realize that the standard reinforcement learning only uses one environment to train the agent, which
+    can facilite overfitting. Therefore, by extending the concept of generalization, we decide to introduce
+    different environments (tasks) to the agent in order to learn more efficiently a new Atari environment
+    (motivation of meta reinforcement learning). Our goal is here to let
+    the agent train on three different games and it needs to learn the fourth game by itself based on its
+    trained policy.
+</p>
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Illustration of Meta-Learning Approach in RL</i></center>
+    <img src = "../images/topic-figure.png" alt = "Topic of the project illustrated."><br>
+</div>
+<hr class="style">
+
+<h2>Language and Main Libraries</h2>
+<p class="text">
+    <li>Programming Language: Python 3.7 with Anaconda virtual environment</li>
+    <li>GYM: Standard API for reinforcement learning and collection of Atari environments</li>
+    <li>RLKIT: Library for Reinforcement Learning Algorithms and Experiment for Atari environments</li>
+    <li>DOODAD: Library for launching Atari experiments on different machines.</li>
+</p><br>
+<hr class="style">
+
+<h2>IDEs and Software Used in This Project</h2>
+<p class="text">
+    <li>Pycharm: For debugging issues related to preprocessing of Atari environments and local experiments.</li>
+    <li>VSCode with ssh extension: For debugging actual Atari experiments while connecting to the lab computers.</li>
+    <li>Docker: For running experiments inside a nvidia-docker image.</li>
+</p><br>
+<hr class="style">
+
+<h2>Setup for Experiments</h2>
+<p class="text">
+    <li>Which computers are you working on? <br>
+        Local: Virtual Machine Ubuntu version 22.04 <br>
+        Lab Computer: Glen's lab computers (Blue and Green) accessed through ssh with a GPU (NVIDIA RTX A4000)
+    </li><br>
+
+    <li>How do you execute an experiment? <br>
+        In the remote computer, I created a nvidia-docker image for my Atari experiment and I run the python
+        file by using that image.
+    </li>
 </p>
 
-<b>Programming Language:</b> Python 3.7<br><br>
-<b>Libraries:</b> <br>
-- Open AI, stable-baselines3, Pytorch<br>
-- rlkit: Library for Reinforcement Learning Algorithms<br>
-- doodad: Library for running experiments on different computers<br>
+
 
 </body>
 </html>
