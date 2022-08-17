@@ -18,6 +18,92 @@
 </h1>
 
 <!-- ************************************************* -->
+<!-- Workload 7 - RL Experiments -->
+<!-- ************************************************* -->
+<h2>Workload 7 - RL Experiments</h2>
+
+<p class="text">
+    Week of August 8th and 15th <br>
+    <b>Deadline</b>: August 16th
+</p>
+
+<mark>Fix the GPU Issue for the Atari Experiments</mark><br>
+<p class="text">
+    The first solution during the previous workload was to directly run into the docker image in the lab
+    computer. After several attempts, I managed to fully solve the issue. The GPU can recognize the
+    experiment and it has been used for the experiments with ssh mode. The results of this solution
+    are the same as the ones shown in the last figure of workload 7, but the difference is I can
+    call my experiment in my laptop by ssh instead of going directly to the lab computer.
+</p>
+
+<p class="text">
+    Most of the changes were listed on Github repositories (RLKIT and DOODAD), but TL;DR, the problem was
+    the run_experiment.py file from doodad was not using the GPU, so we add a line of code (ptu.set_gpu_mode(True)) in order
+    to force the experiment to run with the lab's GPU. Furthermore, since we need to run in CPU and GPU, I decide
+    to create two different docker images: one for CPU and one for GPU. They all use the same Dockerfile, except
+    the requirements are different.
+</p>
+
+
+<mark>Zero-Shot Meta-Learning and Discussion for future plans</mark><br>
+<p class="text">
+    In this project, we decide to use the Batch RL in order to extend generalization in RL (the IQL algorithm;
+    Implicit Q-Learning). However, we still need to test on DQN algorithm with different Atari experiments because
+    we need to make sure that the preprocessing works while also comparing our DQN experiment with the ones that are
+    in the "Playing Atari with Deep Reinforcement Learning" paper. Once we're done with that, we will incorporate
+    the IQL algorithm and maybe use Compute Canada in order to speed things up.
+</p>
+
+<p class="text">
+    In the next workload, I will read a paper related to IQL algorithm and post my personal notes and annotations related to
+    the paper in the "Notes and References" section.
+</p>
+
+
+<mark>Implementation of Comet-ML</mark><br>
+<p class="text">
+    In order to look at our results while the experiments are running, I decide to add comet_ml library in my experiments
+    so I can easily analyze the experiments' performance based on different graphs. All the changes in the code related
+    to this section are in the README section of the Github repositories.
+</p>
+
+<mark>Testing on Breakout-v0</mark><br>
+<p class="text">
+    We start by testing our first DQN Breakout experiments: <br>
+    Experiment 1: 3 000 epochs with learning rate of 0.001 <br>
+    Experiment 2: 5 000 epochs with max_path_length of 500 with original learning_rate of 3E-4
+</p>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Total Average Returns for Breakout Atari Experiments</i></center>
+    <img src = "../images/w7-first-exp.png" alt = "First Atari Experiments">
+</div><br>
+
+<p class="text">
+    For now, the average total rewards seem to increase in the second experiment, but not enough. The baseline for Breakout-v0
+    was 168 (First Figure in workload 6) whereas our experiment was only 6 as the highest score. Because of that, we need to explore
+    on other tasks: look at the replay buffer size, improve the preprocessing for the Atari games (for now, the number of channels is 1,
+    but the papers uses 4), try another Atari environment instead of Breakout.
+</p>
+
+<mark>Report - Preliminary Version</mark><br>
+<p class="text">
+    I start by writing the first version of the report during this workload. Here are the complete sections: <br>
+    - Introduction <br>
+    - Related work <br>
+    - Background and Math Framework <br>
+    - The rest of the report is in bullet points
+</p>
+
+<p class="text">
+    The goal for the next workload is to write about the IQL (zero-shot meta-learning) algorithm in the report (project method
+    section) while improve the agent's performance during training.
+</p>
+
+<hr class="style">
+<!-- ************************************************* -->
 <!-- Workload 6 - Setup for Experiments -->
 <!-- ************************************************* -->
 <h2>Workload 6 - Setup for Experiments</h2>
