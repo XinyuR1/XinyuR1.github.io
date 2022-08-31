@@ -18,7 +18,7 @@
     IFT 3150 - Project in Computer Science
 </h1>
 <p style = "text-align:center; font-size:large"> Extending Generalization in Reinforcement Learning </p>
-<p style = "text-align:center; font-weight: bold; font-size:large"> Last updated: August 29th, 2022 </p>
+<p style = "text-align:center; font-weight: bold; font-size:large"> Last updated: August 30th, 2022 </p>
 <img src = "images/udem.png" alt = "Logo of University of Montreal">
 
 <p>
@@ -46,25 +46,16 @@
 <h2>Abstract</h2>
     <!-- English -->
 <p class="text">
-    Reinforcement learning is a method that focuses on the interaction of the agent and
-    its environment based on different actions. The challenge here is to optimize a policy
-    containing the best series of actions to take given a state in order to maximize the chance
-    of getting a reward. However, rewards aren’t present in every action. They are quite sparse
-    throughout the experiment, which makes it very difficult to distinguish between positive and
-    negative actions. As such, we need a lot of data and examples to train the agent. Furthermore,
-    reinforcement learning can easily lead to overfitting since the agent is trained in a restricted
-    number of environments. In other words, the agent is mostly “memorizing” different actions in a
-    specific environment, which can significantly decrease the agent’s performance in a new
-    environment. Instead, we want to create agents that learn and generalize to similar tasks.
-    These agents are more useful in the real world since they are not only learning about a
-    specific task, but also have the capacity to reuse their experience for different future goals,
-    which can lead to more flexibility in terms of objectives. In this project,
-    we will improve on new machine learning methods that train agents to perform well on different
-    tasks in an environment where they haven’t gathered prior experience.
+    Reinforcement learning (RL) is a type of learning that involves the agent learning from their own experiences to solve different tasks in a given environment. The agent must find the best series of actions (policy) so that it can maximize the total number of rewards on average. In order to qualify whether an action is good or not, we use the quality function which is the average of the future rewards obtained by the agent at a given pair of states and actions. Thanks to this, the agent will be able to perform his tasks in an optimal way.
+    However, in real life, the agent’s training environment is not necessarily the same as the test environment, so this may cause an overfitting problem. In other words, in a standard RL algorithm, the agent fails to generalize what it has learned in a new environment where it hasn’t gathered prior experience. Therefore, we recommend redefining the concept of generalization by proposing the following method: Zero-Shot Meta Learning with IQL. We compared this method with a classical DQN algorithm.
+    We applied these methods to three Atari games that have similar characteristics (shooting at various targets). We note that the proposed method gives us a score of 357 points at most, while the DQN algorithm cannot exceed a score of 311 points. In short, using more than one Atari game in the training phase and using the IQL algorithm allow the agent to perform better in a new Atari game. In other words, this method improves the agent to adapt in other Atari games that it has never tried, so it generalizes better.
 </p>
 
     <!-- French -->
     <!-- TODO -->
+<p class="text">
+    L’apprentissage par renforcement (RL) est un type d’apprentissage qui consiste à l’agent d’apprendre, de leurs propres expériences, à résoudre différentes tâches dans un environnement donné. L’agent doit trouver la meilleure série d’actions (politique) afin qu’il puisse maximiser le nombre de récompenses total en moyenne. Afin de qualifier si une action est bonne ou pas, on se sert de la fonction de qualité qui est la moyenne des futures récompenses obtenues par l’agent à une paire d’états et d’actions donnée. Grâce à cela, l’agent pourra accomplir ses tâches de façon optimale. Cependant, dans la vraie vie, l’environnement d’entraînement de l’agent n’est pas nécessairement le même que celui du test, donc cela peut occasionner un problème de surajustement. En d’autres mots, dans un algorithme de RL standard, l’agent n’arrive pas à généraliser ce qu’il a appris dans un nouvel environnement. On conseille de redéfinir le concept de généralisation en proposant la méthode suivante : Zero-Shot Meta Learning avec IQL. On a comparé cette méthode avec un algorithme classique DQN. Nous avons appliqué ces méthodes sur trois jeux Atari qui ont des caractéristiques similaires (tirer sur diverses cibles). On constate que la méthode proposée nous donne un score de 357 points au maximum, tandis que l’algorithme DQN ne peut pas dépasser un score de 311 points. On conclut qu’utiliser plus d’un jeu Atari dans la phase d’entraînement et se servir de l’algorithme IQL améliore l’agent à s’adapter dans d’autres jeux Atari qu’il n’a jamais essayé, donc il généralise mieux.
+</p>
 
 </body>
 </html>

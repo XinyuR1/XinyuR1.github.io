@@ -17,16 +17,20 @@
     Updates
 </h1>
 
-<h2>Workload 9 - Results and Discussion</h2>
+<h2>Workload 9 - Final Steps</h2>
 <p class="text">
     Weeks of 22nd and 29th <br>
     <b>Deadline</b>: August 30th
 </p>
-- Results (graphs) <br>
-- Add information about problem with Space Invaders. We use Assault as our
-test environment instead <br>
-- Clean the code, add comments. <br>
-- Finish the report. <br>
+
+<p class="text">
+    Once we have all the results, I spent the last week writing the report, while also preparing
+    for my presentation. In terms of the code, I added comments and references, while documenting
+    every changes that I've made in the libraries.
+</p>
+
+<hr class="style">
+
 
 <h2>Workload 8 - Zero-Shot Meta Learning</h2>
 
@@ -35,17 +39,43 @@ test environment instead <br>
     <b>Deadline</b>: August 25th
 </p>
 
-Week of August 15th <br>
-- Writing the report <br>
-- Preprocessing and Neural Networks for the Policy <br>
-- Create a wrapper for a set of Atari environments <br>
-<br>
-Week of August 22nd <br>
-- IQL Implementation <br>
-- Read paper about IQL <br>
-- Epsilon-Greedy Implementation <br>
-- Solve Docker error #137 (too much memory taken in the docker container) <br>
+<mark>Preprocessing and Neural Networks for the Policy</mark><br>
+<p class="text">
+    During the first week, I have tried several other ways of preprocessing the Atari images. One of them
+    is to 4 channels instead of one by stacking multiple Atari images in a single input. However,
+    it consumed more memory in the docker container which stops the training midway. For that reason,
+    I decide to stick with the original preprocessing method that is described in the report. I also tried
+    and experiment with other neural networks from other papers, but the experiments showed that the CNN
+    presented in the report has better performance.
+</p>
 
+<mark>Atari Wrapper for a set of Atari environments</mark><br>
+<p class="text">
+    During the past workloads, I've wanted the agent to train on multiple Atari environments, instead
+    of a single one. Therefore, I created a wrapper that lets the agent to switch different Atari
+    games throughout the training process.
+</p>
+
+<mark>Read paper about Offline RL with IQL</mark><br>
+<mark>IQL Implementation</mark><br>
+<mark>Epsilon-Greedy Algorithm Implementation</mark><br>
+<p class="text">
+    In terms of using Zero-Shot Meta Learning, I decided to implement the algorithm IQL. Then,
+    we compared the agent who trained in DQN algorithm and see if the proposed method lets the
+    agent to generalize for similar tasks. Here are the graphs that I've got from the different
+    experiments. In terms of discussion of these graphs, consult Discussion and Results in the report. Note that
+    instead of using Space Invaders as our Atari game for the test environment, we switched it to Assault due
+    to implementation issues.
+</p>
+
+<div class="h-divider">
+    <div class="shadow"></div>
+    <div class="text"><i>Figure</i></div><br>
+    <center><i>Averaged Rewards for the Four Experiments</i></center>
+    <img src = "../images/w8-results.png" alt = "Final results for this project">
+</div><br>
+
+<hr class="style">
 <!-- ************************************************* -->
 <!-- Workload 7 - RL Experiments -->
 <!-- ************************************************* -->
